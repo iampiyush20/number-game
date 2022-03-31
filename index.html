@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body onload="init()">
+    <main>
+        <div id="naming">
+            <h2>welcome</h2>
+            <img class="image" src="image.jpg" alt="logo">
+            <section class="eventsection">
+                <input type="text"
+                id="name"
+                class="nam"
+                placeholder="enter your full name"
+                
+            >
+            <input type="number"
+            id="age"
+            class="nam"
+            min="1"
+            max="100"
+            placeholder="enter your age"
+            
+        >
+            <div class="button-wrapper">
+                <button  onClick="Continue()">Continue</button>
+              
+            </div>
+        </section>
+        </div>
+
+        <div id="welcome">
+            <h3 id="print"></h3>
+            <h2>guess the random number between 1-100</h2>
+            <img class="image" src="image.jpg" alt="logo">
+        <section class="eventsection">
+           
+            <p>select the difficulty</p>
+            <div class="button-wrapper">
+                <button  onClick="easyMode(10)">Easy: 10 attempts</button>
+                <button  onClick="hardMode(5)">Hard: 5 attempts</button>
+            </div>
+        </section>
+        </div>
+
+        <!--our actual game area-------------------------- -->
+
+
+        <div id="gameArea">
+            <div id="newGameButton">
+                <button onclick="newgame();">new Game</button>
+            </div>
+
+            <section>
+                <h3 id="textoutput">your guess</h3>
+                <input type="number"
+                    id="inputbox"
+                    min="1"
+                    max="100"
+                    placeholder="enter your number"
+                    onchange="compareguess()"
+                >
+
+            </section>
+
+            <section class="stats">
+                 <div class="info">
+             
+                    
+                    <p>number of previous attempts</p>
+                     <span id="attempts">0</span>
+                 </div>
+                 <div class="info">
+                    <p>number of previous guesses</p>
+                    <span id="guesses">0</span>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+
+</body>
+</html>
