@@ -47,7 +47,7 @@ const startGame=()=>{
 
 const easyMode=()=>{
     maxGuess=10;
-    sessionStorage.setItem('mode','10');
+    sessionStorage.setItem('mode',10);
     sessionStorage.setItem('game','yes')
     sessionStorage.removeItem('diffic')
    
@@ -56,7 +56,7 @@ startGame();
 
 const hardMode=()=>{
     maxGuess=5;
-    sessionStorage.setItem('mode','5');
+    sessionStorage.setItem('mode',5);
     sessionStorage.setItem('game','yes')
     sessionStorage.removeItem('diffic')
     startGame();
@@ -71,11 +71,11 @@ console.log(init(a))
     userguess=[...userguess,userNumber];
 //console.log(userguess);
 document.getElementById("guesses").innerHTML=userguess;
+// document.getElementById("guesses").innerHTML=userguess.length;
 
-
-console.log(userguess);//check the value low or high.................
-
-for(var i=0;i<=userguess.length;i++){
+console.log("wefwe "+userguess.length);//check the value low or high.................
+console.log('computer '+userguess)
+for(var i=1;i<userguess.length;i++){
     document.getElementById("attempts").innerHTML=userguess.length;
     if(userguess[i]>init(a)){
         document.getElementById("textoutput").innerText="your guess is high";
@@ -83,20 +83,23 @@ for(var i=0;i<=userguess.length;i++){
     }else if(userguess[i]<init(a)){
         document.getElementById("textoutput").innerText="your guess is low";
         document.getElementById("inputbox").value="empty";
-    
     }else{
         return;
     }
 }
 
+
+console.log('fgnerogne');
 var mode=sessionStorage.getItem("mode");
-if(userguess.length>=10 && mode==10){
+if(userguess.length==10 && mode==10){
 document.getElementById("inputbox").style.display="none";
 }else if(userguess.length==5 && mode ==5){
     document.getElementById("inputbox").style.display="none";
 }else{
    return;
 }
+
+console.log('length is '+userguess.length);
 
 /*if(userNumber>10)
 {
@@ -131,4 +134,10 @@ document.getElementById("print").innerText=piyush;
 function newgame(){
     sessionStorage.clear();
     window.location.reload();
+}
+
+console.log(sessionStorage.getItem('mode'))
+
+for(var i=1;i<=sessionStorage.getItem('mode');i++){
+  console.log('hy');
 }
